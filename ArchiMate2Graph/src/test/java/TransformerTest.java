@@ -31,8 +31,14 @@ public class TransformerTest {
     }
 
     @Test
-    public void TransformerTestName() {
+    public void testGraphName() {
         String processName = Transformer.transform(archiSuranceObject).getId();
         assertEquals("Archisurance",processName);
+    }
+
+    @Test
+    public void testNumberElements() {
+        int actualNumber = Transformer.transform(archiSuranceObject).getNodeCount();
+        assertEquals(163, actualNumber);
     }
 }
