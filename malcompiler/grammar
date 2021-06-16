@@ -1,0 +1,86 @@
+; rules
+<mal>           ::= (<category> | <associations> | <include> | <define>)* EOF
+<define>        ::= HASH ID COLON STRING
+<meta1>         ::= ID <meta2>
+<meta2>         ::= INFO COLON STRING
+<include>       ::= INCLUDE STRING
+<number>        ::= INT | FLOAT
+
+<category>      ::= CATEGORY ID <meta1>* LCURLY <asset>* RCURLY
+<asset>         ::= ABSTRACT? ASSET ID (EXTENDS ID)? <meta1>* LCURLY (<attackstep> | <variable>)* RCURLY
+<attackstep>    ::= <astype> ID <tag>* <cia>? <ttc>? <meta1>* <existence>? <reaches>?
+<astype>        ::= ALL | ANY | HASH | EXIST | NOTEXIST
+<tag>           ::= AT ID
+<cia>           ::= LCURLY <cia-list>? RCURLY
+<cia-list>      ::= <cia-class> (COMMA <cia-class>)*
+<cia-class>     ::= C | I | A
+<ttc>           ::= LBRACKET <ttc-expr>? RBRACKET
+<ttc-expr>      ::= <ttc-term> ((PLUS | MINUS) <ttc-term>)*
+<ttc-term>      ::= <ttc-fact> ((STAR | DIVIDE) <ttc-fact>)*
+<ttc-fact>      ::= <ttc-prim> (POWER <ttc-fact>)?
+<ttc-prim>      ::= ID (LPAREN (<number> (COMMA <number>)*)? RPAREN)? | LPAREN <ttc-expr> RPAREN | <number>
+<existence>     ::= REQUIRE <expr> (COMMA <expr>)*
+<reaches>       ::= (INHERIT | OVERRIDE) <expr> (COMMA <expr>)*
+
+<variable>      ::= LET ID ASSIGN <expr>
+<expr>          ::= <steps> ((UNION | INTERSECT | MINUS) <steps>)*
+<steps>         ::= <step> (DOT <step>)*
+<step>          ::= (LPAREN <expr> RPAREN | ID (LPAREN RPAREN)?) (STAR | <type>)*
+
+<associations>  ::= ASSOCIATIONS LCURLY <associations1>? RCURLY
+<associations1> ::= ID <association> (ID (<meta2> | <association>))*
+<association>   ::= <type> <mult> LARROW ID RARROW <mult> <type> ID
+<mult>          ::= <mult-unit> (RANGE <mult-unit>)?
+<mult-unit>     ::= INT | STAR
+<type>          ::= LBRACKET ID LBRACKET
+
+
+; keywords
+INCLUDE         ::= "include"
+INFO            ::= "info"
+CATEGORY        ::= "category"
+ABSTRACT        ::= "abstract"
+ASSET           ::= "asset"
+EXTENDS         ::= "extends"
+ASSOCIATIONS    ::= "associations"
+LET             ::= "let"
+EXIST           ::= "E"
+C               ::= "C"
+I               ::= "I"
+A               ::= "A"
+
+
+; tokens
+EOF             ; end of file
+STRING          ; java string literal
+ID              ; java identifier
+INT             ::= [0-9]+
+FLOAT           ::= [0-9]+ (DOT [0-9]+)?
+HASH            ::= "#"
+COLON           ::= ":"
+LCURLY          ::= "{"
+RCURLY          ::= "}"
+INHERIT         ::= "+>"
+OVERRIDE        ::= "->"
+ALL             ::= "&"
+ANY             ::= "|"
+NOTEXIST        ::= "!E"
+AT              ::= "@"
+LBRACKET        ::= "["
+RBRACKET        ::= "]"
+LPAREN          ::= "("
+RPAREN          ::= ")"
+COMMA           ::= ","
+REQUIRE         ::= "<-"
+ASSIGN          ::= "="
+UNION           ::= "\/"
+INTERSECT       ::= "/\"
+DOT             ::= "."
+RANGE           ::= ".."
+STAR            ::= "*"
+PLUS            ::= "+"
+MINUS           ::= "-"
+DIVIDE          ::= "/"
+POWER           ::= "^"
+LARROW          ::= "<--"
+RARROW          ::= "-->"

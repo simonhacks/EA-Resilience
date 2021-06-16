@@ -1,0 +1,12 @@
+#!/bin/bash
+
+OLD_PWD="$PWD"
+cd "$(dirname "$0")"
+BIN_DIR="$PWD"
+cd "$OLD_PWD"
+RUNTIME_DIR="$(dirname "$BIN_DIR")"
+
+"$BIN_DIR/java" \
+  --module-path "$RUNTIME_DIR/dependencies" \
+  --module "org.mal_lang.compiler.cli" \
+  $@

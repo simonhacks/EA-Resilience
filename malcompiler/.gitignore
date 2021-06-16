@@ -1,0 +1,13 @@
+# Maven
+target/
+
+# Eclipse
+.project
+.settings/
+.classpath
+
+# Vim
+*.swp
+
+# Formatter
+google-java-format-1.7-all-deps.jar
