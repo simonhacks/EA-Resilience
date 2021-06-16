@@ -5,7 +5,7 @@ import org.graphstream.graph.implementations.DefaultGraph;
 
 public class Transformer {
     public static Graph transform(org.opengroup.xsd.archimate._3.ModelType archi) {
-        Graph transformedGraph = new DefaultGraph(archi.getMetadata());
+        Graph transformedGraph = new DefaultGraph(archi.getNameGroup().get(0).getValue());
 
         return transformedGraph;
     }
