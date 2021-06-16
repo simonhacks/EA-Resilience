@@ -14,6 +14,7 @@ public class Transformer {
             String type = element.getClass().getSimpleName();
             transformedGraph.addNode(id);
             transformedGraph.getNode(id).setAttribute("name",name);
+            transformedGraph.getNode(id).setAttribute("type",type);
         }
 
         return transformedGraph;

@@ -41,4 +41,18 @@ public class TransformerTest {
         int actualNumber = Transformer.transform(archiSuranceObject).getNodeCount();
         assertEquals(163, actualNumber);
     }
+
+    @Test
+    public void testNodeName() {
+        String actualName = Transformer.transform(archiSuranceObject)
+                .getNode("id-1882").getAttribute("name",String.class);
+        assertEquals("BIBIT-Server",actualName);
+    }
+
+    @Test
+    public void testNodeType() {
+        String actualType = Transformer.transform(archiSuranceObject)
+                .getNode("id-1882").getAttribute("type",String.class);
+        assertEquals("Device",actualType);
+    }
 }
