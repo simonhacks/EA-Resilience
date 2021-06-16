@@ -5,12 +5,12 @@ import org.opengroup.xsd.archimate._3.ModelType;
 import se.kth.ArchiMate2Graph.Transformer;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TransformerTest {
@@ -54,5 +54,36 @@ public class TransformerTest {
         String actualType = Transformer.transform(archiSuranceObject)
                 .getNode("id-1882").getAttribute("type",String.class);
         assertEquals("Device",actualType);
+    }
+
+    @Test
+    public void testNumberEdges() {
+        int actualNumber = Transformer.transform(archiSuranceObject).getEdgeCount();
+        assertEquals(236, actualNumber);
+    }
+
+    @Test
+    public void testEdgeName() {
+        String actualName = Transformer.transform(archiSuranceObject)
+                .getEdge("id-1428").getAttribute("name",String.class);
+        assertEquals("",actualName);
+    }
+
+    @Test
+    public void testEdgeType() {
+        String actualType = Transformer.transform(archiSuranceObject)
+                .getEdge("id-1428").getAttribute("type",String.class);
+        assertEquals("Serving",actualType);
+    }
+
+    @Test
+    public void testEdgeEnds() {
+        String sourceId = Transformer.transform(archiSuranceObject)
+                .getEdge("id-1428").getSourceNode().getId();
+        String targetId = Transformer.transform(archiSuranceObject)
+                .getEdge("id-1428").getTargetNode().getId();
+        assertAll ( () -> assertEquals("id-1414",sourceId),
+                () -> assertEquals("id-1399",targetId)
+        );
     }
 }
