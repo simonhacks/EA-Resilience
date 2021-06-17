@@ -1,0 +1,54 @@
+<com.sap.kth.scadbuilder.model.mapping.ProcessMalMapping>
+  <mapping class="linked-list">
+    <com.sap.kth.scadbuilder.model.mapping.Mapping>
+      <fromProcess>ApplicationComponent</fromProcess>
+      <toMal>Application</toMal>
+    </com.sap.kth.scadbuilder.model.mapping.Mapping>
+    <com.sap.kth.scadbuilder.model.mapping.Mapping>
+      <fromProcess>CommunicationNetwork</fromProcess>
+      <toMal>Network</toMal>
+    </com.sap.kth.scadbuilder.model.mapping.Mapping>
+    <com.sap.kth.scadbuilder.model.mapping.Mapping>
+      <fromProcess>Node</fromProcess>
+      <toMal>System</toMal>
+    </com.sap.kth.scadbuilder.model.mapping.Mapping>
+    <com.sap.kth.scadbuilder.model.mapping.Mapping>
+      <fromProcess>SystemSoftware</fromProcess>
+      <toMal>Application</toMal>
+    </com.sap.kth.scadbuilder.model.mapping.Mapping>
+    <com.sap.kth.scadbuilder.model.mapping.Mapping>
+      <fromProcess>Device</fromProcess>
+      <toMal>System</toMal>
+    </com.sap.kth.scadbuilder.model.mapping.Mapping>
+    <com.sap.kth.scadbuilder.model.mapping.Mapping>
+      <fromProcess>DataObject</fromProcess>
+      <toMal>Data</toMal>
+    </com.sap.kth.scadbuilder.model.mapping.Mapping>
+  </mapping>
+  <attributeMappings class="linked-list">
+    <com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+      <from>NAME</from>
+      <to>name</to>
+    </com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+    <com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+      <from>ID</from>
+      <to>id</to>
+    </com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+    <com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+      <from>TYPE</from>
+      <to>type</to>
+    </com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+    <com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+      <from>PROBABILITY</from>
+      <to>prob</to>
+    </com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+    <com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+      <from>PROBABILITY_ATTR</from>
+      <to>prob_attr</to>
+    </com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+    <com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+      <from>PROBABILITY_STEP</from>
+      <to>prob_step</to>
+    </com.sap.kth.scadbuilder.model.mapping.AttributeMapping>
+  </attributeMappings>
+</com.sap.kth.scadbuilder.model.mapping.ProcessMalMapping>

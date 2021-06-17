@@ -17,6 +17,7 @@ public class Transformer {
             transformedGraph.addNode(id);
             transformedGraph.getNode(id).setAttribute("name",name);
             transformedGraph.getNode(id).setAttribute("type",type);
+            transformedGraph.getNode(id).setAttribute("id",Integer.parseInt(id.replaceAll("[^\\d.]", "")));
         }
 
         for(RelationshipType relationship: archi.getRelationships().getRelationship()) {
@@ -29,6 +30,7 @@ public class Transformer {
             transformedGraph.addEdge(id,sourceId,targetId,true);
             transformedGraph.getEdge(id).setAttribute("name",name);
             transformedGraph.getEdge(id).setAttribute("type",type);
+            transformedGraph.getEdge(id).setAttribute("id",Integer.parseInt(id.replaceAll("[^\\d.]", "")));
         }
 
         return transformedGraph;

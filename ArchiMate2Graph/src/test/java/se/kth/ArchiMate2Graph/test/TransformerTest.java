@@ -1,4 +1,5 @@
-import org.graphstream.stream.binary.ByteProxy;
+package se.kth.ArchiMate2Graph.test;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.opengroup.xsd.archimate._3.ModelType;

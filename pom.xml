@@ -16,6 +16,7 @@
     <modules>
         <module>sCADbuilder</module>
         <module>ArchiMate2Graph</module>
+        <module>App</module>
     </modules>
 
 
