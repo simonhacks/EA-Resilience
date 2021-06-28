@@ -105,5 +105,8 @@ public class Transformer {
         edgeId++;
 
         nodeId++;
+
+        //remove original edge
+        enrichedGraph.removeEdge(edge);
     }
 }
