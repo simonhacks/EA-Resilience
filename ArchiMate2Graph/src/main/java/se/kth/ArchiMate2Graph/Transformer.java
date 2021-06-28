@@ -66,7 +66,14 @@ public class Transformer {
                             }
                             break;
                     }
-
+                    switch (edge.getTargetNode().getAttribute("type",String.class)) {
+                        case "Device":
+                        case "Node":
+                            if("CommunicationNetwork".equals(edge.getSourceNode().getAttribute("type",String.class))) {
+                                addNodeInBetween(enrichedGraph,edge,"ApplicationComponent");
+                            }
+                            break;
+                    }
                     break;
             }
         }
