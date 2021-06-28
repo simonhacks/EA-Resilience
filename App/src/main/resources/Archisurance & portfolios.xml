@@ -35,9 +35,9 @@
 			<name xml:lang="nl">Claimgegevensmanagement</name>
 		</element>
 		<element identifier="id-843" xsi:type="ApplicationComponent">
-			<name xml:lang="de">Heim &amp; Weg-Policeverwaltung</name>
-			<name xml:lang="en">Home &amp; Away Policy Administration</name>
-			<name xml:lang="nl">Uit &amp; Thuispolisadministratie</name>
+			<name xml:lang="de">Heim and Weg-Policeverwaltung</name>
+			<name xml:lang="en">Home and Away Policy Administration</name>
+			<name xml:lang="nl">Uit and Thuispolisadministratie</name>
 		</element>
 		<element identifier="id-855" xsi:type="ApplicationComponent">
 			<name xml:lang="de">Datenzugang Kunden</name>
@@ -696,9 +696,9 @@
 			<name xml:lang="nl">Document-verwerking SSC</name>
 		</element>
 		<element identifier="id-303" xsi:type="BusinessActor">
-			<name xml:lang="de">Heim &amp; Weg</name>
-			<name xml:lang="en">Home  &amp;  Away</name>
-			<name xml:lang="nl">Uit &amp; Thuis</name>
+			<name xml:lang="de">Heim and Weg</name>
+			<name xml:lang="en">Home  and  Away</name>
+			<name xml:lang="nl">Uit and Thuis</name>
 		</element>
 		<element identifier="id-507" xsi:type="BusinessRole">
 			<name xml:lang="de">Zwischen-person</name>
@@ -827,8 +827,8 @@
 		</element>
 		<element identifier="id-13636" xsi:type="Grouping">
 			<name xml:lang="de">Produkt- und Service Ansicht</name>
-			<name xml:lang="en">Products &amp; Services Goals</name>
-			<name xml:lang="nl">Product &amp; services doelstellingen</name>
+			<name xml:lang="en">Products and Services Goals</name>
+			<name xml:lang="nl">Product and services doelstellingen</name>
 		</element>
 		<element identifier="id-10804" xsi:type="Grouping">
 			<name xml:lang="de">Anwendungskomponenten und Dienste</name>
