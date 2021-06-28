@@ -75,6 +75,15 @@ public class Transformer {
                             break;
                     }
                     break;
+                case "Access": //Add additional edge as coreLang defines Data -> Application and not App -> Data
+                    enrichedGraph.removeEdge(edge); //Remove edge, because it is just one edge allowed
+                    String edgeIdString = String.valueOf(edgeId);
+                    enrichedGraph.addEdge(edgeIdString, edge.getTargetNode(), edge.getSourceNode());
+                    enrichedGraph.getEdge(edgeIdString).setAttribute("name",null);
+                    enrichedGraph.getEdge(edgeIdString).setAttribute("type",null);
+                    enrichedGraph.getEdge(edgeIdString).setAttribute("id",edgeId);
+                    edgeId++;
+                    break;
             }
         }
 
