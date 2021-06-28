@@ -24,6 +24,10 @@
       <fromProcess>DataObject</fromProcess>
       <toMal>Data</toMal>
     </com.sap.kth.scadbuilder.model.mapping.Mapping>
+    <com.sap.kth.scadbuilder.model.mapping.Mapping>
+      <fromProcess>Connection</fromProcess>
+      <toMal>ConnectionRule</toMal>
+    </com.sap.kth.scadbuilder.model.mapping.Mapping>
   </mapping>
   <attributeMappings class="linked-list">
     <com.sap.kth.scadbuilder.model.mapping.AttributeMapping>

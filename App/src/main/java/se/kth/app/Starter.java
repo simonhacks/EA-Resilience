@@ -33,7 +33,7 @@ public class Starter {
 
 
             //Transform to graph
-            Graph archiGraph = Transformer.transform(archiSuranceObject);
+            Graph archiGraph = Transformer.postProcess(Transformer.transform(archiSuranceObject));
 
 
             //Create sCAD file
