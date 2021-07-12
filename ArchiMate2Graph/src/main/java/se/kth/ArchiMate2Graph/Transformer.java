@@ -63,7 +63,7 @@ public class Transformer {
                         case "Device":
                         case "Node":
                             if("CommunicationNetwork".equals(edge.getTargetNode().getAttribute("type",String.class))) {
-                                addNodeInBetween(enrichedGraph,edge,"ApplicationComponent");
+                                addNodeInBetween(enrichedGraph,edge,"SystemSoftware");
                             }
                             break;
                     }
@@ -71,7 +71,7 @@ public class Transformer {
                         case "Device":
                         case "Node":
                             if("CommunicationNetwork".equals(edge.getSourceNode().getAttribute("type",String.class))) {
-                                addNodeInBetween(enrichedGraph,edge,"ApplicationComponent");
+                                addNodeInBetween(enrichedGraph,edge,"SystemSoftware");
                             }
                             break;
                     }
