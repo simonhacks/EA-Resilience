@@ -10,13 +10,14 @@ import org.opengroup.xsd.archimate._3.RelationshipType;
 public class Transformer {
     private static int nodeId = 300000;
     private static int edgeId = 500000;
+    private static int languageValue=1;
 
     public static Graph transform(org.opengroup.xsd.archimate._3.ModelType archi) {
-        Graph transformedGraph = new DefaultGraph(archi.getNameGroup().get(0).getValue());
+        Graph transformedGraph = new DefaultGraph(archi.getNameGroup().get(languageValue).getValue());
 
         for(ElementType element: archi.getElements().getElement()) {
             String id = element.getIdentifier();
-            String name = element.getNameGroup().get(0).getValue();
+            String name = element.getNameGroup().get(languageValue).getValue();
             String type = element.getClass().getSimpleName();
 
             transformedGraph.addNode(id);
@@ -27,7 +28,7 @@ public class Transformer {
 
         for(RelationshipType relationship: archi.getRelationships().getRelationship()) {
             String id = relationship.getIdentifier();
-            String name = relationship.getNameGroup().get(0).getValue();
+            String name = relationship.getNameGroup().get(languageValue).getValue();
             String type = relationship.getClass().getSimpleName();
             String sourceId = ((ElementType)relationship.getSource()).getIdentifier();
             String targetId = ((ElementType)relationship.getTarget()).getIdentifier();
